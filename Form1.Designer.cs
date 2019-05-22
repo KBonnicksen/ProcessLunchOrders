@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.grbMainCourse = new System.Windows.Forms.GroupBox();
+            this.radSalad = new System.Windows.Forms.RadioButton();
+            this.radPizza = new System.Windows.Forms.RadioButton();
+            this.radHamburger = new System.Windows.Forms.RadioButton();
             this.grbAddOns = new System.Windows.Forms.GroupBox();
+            this.chkAddon3 = new System.Windows.Forms.CheckBox();
+            this.chkAddon2 = new System.Windows.Forms.CheckBox();
+            this.chkAddon1 = new System.Windows.Forms.CheckBox();
             this.grbOrderTotal = new System.Windows.Forms.GroupBox();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.txtTax = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.chkAddon3 = new System.Windows.Forms.CheckBox();
-            this.chkAddon2 = new System.Windows.Forms.CheckBox();
-            this.chkAddon1 = new System.Windows.Forms.CheckBox();
-            this.radSalad = new System.Windows.Forms.RadioButton();
-            this.radPizza = new System.Windows.Forms.RadioButton();
-            this.radHamburger = new System.Windows.Forms.RadioButton();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnPlaceOrder = new System.Windows.Forms.Button();
             this.grbMainCourse.SuspendLayout();
             this.grbAddOns.SuspendLayout();
             this.grbOrderTotal.SuspendLayout();
@@ -63,6 +63,42 @@
             this.grbMainCourse.TabStop = false;
             this.grbMainCourse.Text = "Main course";
             // 
+            // radSalad
+            // 
+            this.radSalad.AutoSize = true;
+            this.radSalad.Location = new System.Drawing.Point(31, 134);
+            this.radSalad.Name = "radSalad";
+            this.radSalad.Size = new System.Drawing.Size(114, 21);
+            this.radSalad.TabIndex = 6;
+            this.radSalad.TabStop = true;
+            this.radSalad.Text = "Salad - $4.95";
+            this.radSalad.UseVisualStyleBackColor = true;
+            this.radSalad.Click += new System.EventHandler(this.radSalad_Click);
+            // 
+            // radPizza
+            // 
+            this.radPizza.AutoSize = true;
+            this.radPizza.Location = new System.Drawing.Point(31, 84);
+            this.radPizza.Name = "radPizza";
+            this.radPizza.Size = new System.Drawing.Size(112, 21);
+            this.radPizza.TabIndex = 7;
+            this.radPizza.TabStop = true;
+            this.radPizza.Text = "Pizza - $5.95";
+            this.radPizza.UseVisualStyleBackColor = true;
+            this.radPizza.Click += new System.EventHandler(this.RadPizza_Click);
+            // 
+            // radHamburger
+            // 
+            this.radHamburger.AutoSize = true;
+            this.radHamburger.Location = new System.Drawing.Point(31, 35);
+            this.radHamburger.Name = "radHamburger";
+            this.radHamburger.Size = new System.Drawing.Size(149, 21);
+            this.radHamburger.TabIndex = 8;
+            this.radHamburger.TabStop = true;
+            this.radHamburger.Text = "Hamburger - $6.95";
+            this.radHamburger.UseVisualStyleBackColor = true;
+            this.radHamburger.Click += new System.EventHandler(this.RadHamburger_Click);
+            // 
             // grbAddOns
             // 
             this.grbAddOns.AutoSize = true;
@@ -75,6 +111,42 @@
             this.grbAddOns.TabIndex = 0;
             this.grbAddOns.TabStop = false;
             this.grbAddOns.Text = "Add-on items";
+            // 
+            // chkAddon3
+            // 
+            this.chkAddon3.AutoSize = true;
+            this.chkAddon3.Location = new System.Drawing.Point(30, 135);
+            this.chkAddon3.Name = "chkAddon3";
+            this.chkAddon3.Size = new System.Drawing.Size(98, 21);
+            this.chkAddon3.TabIndex = 3;
+            this.chkAddon3.Text = "checkBox1";
+            this.chkAddon3.UseVisualStyleBackColor = true;
+            this.chkAddon3.Visible = false;
+            this.chkAddon3.CheckedChanged += new System.EventHandler(this.ChkAddOns_CheckedChanged);
+            // 
+            // chkAddon2
+            // 
+            this.chkAddon2.AutoSize = true;
+            this.chkAddon2.Location = new System.Drawing.Point(30, 85);
+            this.chkAddon2.Name = "chkAddon2";
+            this.chkAddon2.Size = new System.Drawing.Size(98, 21);
+            this.chkAddon2.TabIndex = 4;
+            this.chkAddon2.Text = "checkBox2";
+            this.chkAddon2.UseVisualStyleBackColor = true;
+            this.chkAddon2.Visible = false;
+            this.chkAddon2.CheckedChanged += new System.EventHandler(this.ChkAddOns_CheckedChanged);
+            // 
+            // chkAddon1
+            // 
+            this.chkAddon1.AutoSize = true;
+            this.chkAddon1.Location = new System.Drawing.Point(30, 35);
+            this.chkAddon1.Name = "chkAddon1";
+            this.chkAddon1.Size = new System.Drawing.Size(98, 21);
+            this.chkAddon1.TabIndex = 5;
+            this.chkAddon1.Text = "checkBox3";
+            this.chkAddon1.UseVisualStyleBackColor = true;
+            this.chkAddon1.Visible = false;
+            this.chkAddon1.CheckedChanged += new System.EventHandler(this.ChkAddOns_CheckedChanged);
             // 
             // grbOrderTotal
             // 
@@ -91,24 +163,6 @@
             this.grbOrderTotal.TabIndex = 0;
             this.grbOrderTotal.TabStop = false;
             this.grbOrderTotal.Text = "Order total";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Location = new System.Drawing.Point(495, 333);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(114, 46);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            // 
-            // btnPlaceOrder
-            // 
-            this.btnPlaceOrder.Location = new System.Drawing.Point(495, 254);
-            this.btnPlaceOrder.Name = "btnPlaceOrder";
-            this.btnPlaceOrder.Size = new System.Drawing.Size(114, 46);
-            this.btnPlaceOrder.TabIndex = 2;
-            this.btnPlaceOrder.Text = "Place order";
-            this.btnPlaceOrder.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -161,71 +215,25 @@
             this.txtSubtotal.Size = new System.Drawing.Size(100, 22);
             this.txtSubtotal.TabIndex = 8;
             // 
-            // chkAddon3
+            // btnExit
             // 
-            this.chkAddon3.AutoSize = true;
-            this.chkAddon3.Location = new System.Drawing.Point(30, 135);
-            this.chkAddon3.Name = "chkAddon3";
-            this.chkAddon3.Size = new System.Drawing.Size(98, 21);
-            this.chkAddon3.TabIndex = 3;
-            this.chkAddon3.Text = "checkBox1";
-            this.chkAddon3.UseVisualStyleBackColor = true;
-            this.chkAddon3.Visible = false;
+            this.btnExit.Location = new System.Drawing.Point(495, 333);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(114, 46);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // chkAddon2
+            // btnPlaceOrder
             // 
-            this.chkAddon2.AutoSize = true;
-            this.chkAddon2.Location = new System.Drawing.Point(30, 85);
-            this.chkAddon2.Name = "chkAddon2";
-            this.chkAddon2.Size = new System.Drawing.Size(98, 21);
-            this.chkAddon2.TabIndex = 4;
-            this.chkAddon2.Text = "checkBox2";
-            this.chkAddon2.UseVisualStyleBackColor = true;
-            this.chkAddon2.Visible = false;
-            // 
-            // chkAddon1
-            // 
-            this.chkAddon1.AutoSize = true;
-            this.chkAddon1.Location = new System.Drawing.Point(30, 35);
-            this.chkAddon1.Name = "chkAddon1";
-            this.chkAddon1.Size = new System.Drawing.Size(98, 21);
-            this.chkAddon1.TabIndex = 5;
-            this.chkAddon1.Text = "checkBox3";
-            this.chkAddon1.UseVisualStyleBackColor = true;
-            this.chkAddon1.Visible = false;
-            // 
-            // radSalad
-            // 
-            this.radSalad.AutoSize = true;
-            this.radSalad.Location = new System.Drawing.Point(31, 134);
-            this.radSalad.Name = "radSalad";
-            this.radSalad.Size = new System.Drawing.Size(114, 21);
-            this.radSalad.TabIndex = 6;
-            this.radSalad.TabStop = true;
-            this.radSalad.Text = "Salad - $4.95";
-            this.radSalad.UseVisualStyleBackColor = true;
-            // 
-            // radPizza
-            // 
-            this.radPizza.AutoSize = true;
-            this.radPizza.Location = new System.Drawing.Point(31, 84);
-            this.radPizza.Name = "radPizza";
-            this.radPizza.Size = new System.Drawing.Size(112, 21);
-            this.radPizza.TabIndex = 7;
-            this.radPizza.TabStop = true;
-            this.radPizza.Text = "Pizza - $5.95";
-            this.radPizza.UseVisualStyleBackColor = true;
-            // 
-            // radHamburger
-            // 
-            this.radHamburger.AutoSize = true;
-            this.radHamburger.Location = new System.Drawing.Point(31, 35);
-            this.radHamburger.Name = "radHamburger";
-            this.radHamburger.Size = new System.Drawing.Size(149, 21);
-            this.radHamburger.TabIndex = 8;
-            this.radHamburger.TabStop = true;
-            this.radHamburger.Text = "Hamburger - $6.95";
-            this.radHamburger.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Location = new System.Drawing.Point(495, 254);
+            this.btnPlaceOrder.Name = "btnPlaceOrder";
+            this.btnPlaceOrder.Size = new System.Drawing.Size(114, 46);
+            this.btnPlaceOrder.TabIndex = 2;
+            this.btnPlaceOrder.Text = "Place order";
+            this.btnPlaceOrder.UseVisualStyleBackColor = true;
+            this.btnPlaceOrder.Click += new System.EventHandler(this.BtnPlaceOrder_Click);
             // 
             // frmLunchOrder
             // 
