@@ -68,9 +68,14 @@ namespace ProcessLunchOrders
 
         public void MakeChkBoxesVisible()
         {
-            chkAddon1.Visible = true;
-            chkAddon2.Visible = true;
-            chkAddon3.Visible = true;
+            foreach(Control c in grbAddOns.Controls)
+            {
+                if(c is CheckBox)
+                {
+                    CheckBox box = (CheckBox)c;
+                    box.Visible = true;
+                }
+            }
         }
 
         private void ChkAddOns_CheckedChanged(object sender, EventArgs e)
@@ -89,18 +94,26 @@ namespace ProcessLunchOrders
 
         private void ClearCheckBoxes()
         {
-            chkAddon1.Checked = false;
-            chkAddon2.Checked = false;
-            chkAddon3.Checked = false;
+            foreach (Control c in grbAddOns.Controls)
+            {
+                if (c is CheckBox)
+                {
+                    CheckBox box = (CheckBox)c;
+                    box.Checked = false;
+                }
+            }
         }
-
-        
 
         private void ClearPriceInfo()
         {
-            txtSubtotal.Clear();
-            txtTax.Clear();
-            txtTotal.Clear();
+            foreach (Control c in grbOrderTotal.Controls)
+            {
+                if (c is TextBox)
+                {
+                    TextBox box = (TextBox)c;
+                    box.Clear();
+                }
+            }
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
